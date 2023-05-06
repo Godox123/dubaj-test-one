@@ -1,0 +1,53 @@
+// FONTS
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@300;400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;600;700;800;900&display=swap');
+// END FONTS
+
+// === VARIABLES
+@import '@/assets/scss/variables';
+// === VARIABLES
+
+// MIXINS
+@import '@/assets/scss/mixins';
+// END MIXINS
+
+$breakpoints: (
+  xs: 480px,
+  sm: 768px,
+  md: 1200px,
+);
+
+// global reset
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: sans-serif;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+}
+
+p {
+  margin: 0;
+}
+
+button {
+  outline: none;
+  background-color: inherit;
+  border: none;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}

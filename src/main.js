@@ -1,4 +1,15 @@
-import { createApp } from 'vue'
-import App from './App.vue'
+import { createApp } from 'vue';
+import App from './App.vue';
 
-createApp(App).mount('#app')
+// NORMALIZE
+import 'normalize.css';
+
+// MAIN STYLES
+import '@/assets/scss/main.scss';
+
+// ROUTER
+import router from '@/routes';
+
+const app = createApp(App);
+app.use(router);
+app.mount('#app');

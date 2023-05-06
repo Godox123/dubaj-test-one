@@ -1,0 +1,20 @@
+@mixin mobile-container() {
+  @include respond-below(md) {
+    min-width: 320px;
+    padding: 0 20px;
+  }
+}
+
+@mixin desktop-container() {
+  @include respond-above(md) {
+    min-width: 1200px;
+    max-width: 1920px;
+    margin: 0 auto;
+    padding: 0 15px;
+  }
+}
+
+@mixin container() {
+  @include mobile-container();
+  @include desktop-container();
+}
