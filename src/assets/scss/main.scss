@@ -15,7 +15,7 @@
 $breakpoints: (
   xs: 480px,
   sm: 768px,
-  md: 1200px,
+  md: 1000px,
 );
 
 // global reset
@@ -25,6 +25,10 @@ $breakpoints: (
 
 body {
   font-family: sans-serif;
+
+  @include respond-range(md, xs) {
+    background-color: red;
+  }
 }
 
 h1,

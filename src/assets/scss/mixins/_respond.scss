@@ -1,4 +1,4 @@
-@use "sass:map";
+@use 'sass:map';
 
 @mixin respond-above($breakpoint) {
   @if map-has-key($breakpoints, $breakpoint) {
@@ -29,6 +29,25 @@
     }
   } @else {
     @warn 'Invalid breakpoint' #{$breakpoint};
+  }
+}
+
+@mixin respond-range($start, $end) {
+  @if map-has-key($breakpoints, $start) and map-has-key($breakpoints, $end) {
+    $breakpoint-start-value: map-get($breakpoints, $start);
+    $breakpoint-end-value: map-get($breakpoints, $end);
+
+    @if ($breakpoint-start-value == null) {
+      @error 'Breakpoint start value is null';
+    } @else if ($breakpoint-end-value == null) {
+      @error 'Breakpoint end value is null';
+    }
+
+    @media (max-width: ($breakpoint-start-value - 1)) and (min-width: $breakpoint-end-value) {
+      @content;
+    }
+  } @else {
+    @warn 'Invalid breakpoint';
   }
 }
 
